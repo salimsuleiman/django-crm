@@ -19,23 +19,30 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['django-crm-2021.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+ 'localhost',
+ '127.0.0.1',
+  '*',
+ 'django-crm-2021.herokuapp.com'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
-    'leads',
-    'agents',
-    "crispy_forms",
-    "crispy_tailwind",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party
+    'whitenoise.runserver_nostatic',
+    "crispy_forms",
+    "crispy_tailwind",
+    # local
+    'leads',
+    'agents',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +73,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'djcrm.wsgi.application'
 
 
