@@ -1,10 +1,10 @@
 from pathlib import Path
 
 import environ
-env = environ.Env(DEBUG=(bool, False))
+env = environ.Env()
 
 environ.Env.read_env()
-    
+
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 
@@ -87,7 +87,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-   
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -134,12 +134,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'leads.User'
 
 
-# Auth 
+# Auth
 LOGIN_REDIRECT_URL = '/leads'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
 
-# Tailwind 
+# Tailwind
 CRISPY_TEMPLATE_PACK = 'tailwind'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
@@ -152,7 +152,7 @@ FROM_EMAIL = env('EMAIL')
 PASSWORD = env('PASSWORD')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST ='smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = FROM_EMAIL
 EMAIL_HOST_PASSWORD = PASSWORD
 EMAIL_USE_TLS = True
