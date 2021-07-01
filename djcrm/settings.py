@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['django-crm-2021.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['django-crm-2021.herokuapp.com', 'localhost']
 
 
 # Application definition
