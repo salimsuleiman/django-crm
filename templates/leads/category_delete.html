@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <h1>Are you Sure You want to delete this category ?</h1>
+    <form method='post' >
+        {% csrf_token %}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock content %}
